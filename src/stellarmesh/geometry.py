@@ -179,7 +179,7 @@ class Geometry:
             FutureWarning,
             stacklevel=2,
         )
-        return cls.from_brep(cls, filename, material_names)
+        return cls.from_brep(filename, material_names)
 
     def imprint(self) -> Geometry:
         """Imprint faces of current geometry.

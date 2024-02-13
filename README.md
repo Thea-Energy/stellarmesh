@@ -17,7 +17,7 @@ Stellarmesh is a Gmsh wrapper and DAGMC geometry creator for fusion neutronics w
 - [x] Imprinting and merging of conformal geometry
 - [x] Mesh refinement
 - [x] Automated testing and integration
-- [ ] Programatic manipulation of .h5m tags e.g. materials
+- [x] Programatic manipulation of .h5m tags e.g. materials
 
 # Contents
 - [Contents](#contents)
@@ -73,7 +73,7 @@ mesh = sm.Mesh.from_geometry(geometry, min_mesh_size=50, max_mesh_size=50)
 mesh.write("test.msh")
 mesh.render("doc/torus-mesh-reversed.png", rotation_xyz=(90, 0, -90), normals=15)
 
-h5m = sm.MOABModel.from_mesh(mesh)
+h5m = sm.DAGMCModel.from_mesh(mesh)
 h5m.write("dagmc.h5m")
 h5m.write("dagmc.vtk")
 ```
@@ -178,10 +178,8 @@ Many thanks to [Erik B. Knudsen](https://github.com/ebknudsen) for his work on r
 | Open-source | ✓ | ✓ | ✓ |   |
 | Surface-sense handling | ✓ | ✓ | <sup>1</sup> | ✓ |
 | Mesh refinement | ✓ |   | ✓ | ✓ |
-| Manipulation of .h5m files | <sup>2</sup> |   | | |
+| Manipulation of .h5m files | ✓ |   | | |
 
 <em>Note: Please file an issue if this table is out-of-date.</em>
 
 <sup>1</sup> In development on a personal branch
-
-<sup>2</sup> In development

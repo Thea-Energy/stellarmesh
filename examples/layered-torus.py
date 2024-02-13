@@ -16,6 +16,6 @@ mesh = sm.Mesh.from_geometry(geometry, min_mesh_size=50, max_mesh_size=50)
 mesh.write("test.msh")
 mesh.render("doc/torus-mesh-reversed.png", rotation_xyz=(90, 0, -90), normals=15)
 
-h5m = sm.MOABModel.from_mesh(mesh)
+h5m = sm.DAGMCModel.from_mesh(mesh)
 h5m.write("dagmc.h5m")
 h5m.write("dagmc.vtk")
